@@ -5,12 +5,45 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Website Dorm Mates</title>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		<link href="css/main.css" rel="stylesheet">
 	</head>
 	<body>
-		<h1>Website Dorm Mates</h1>
-		<hr>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Website Dormmates</a>
+				</div>
+				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="#twan">Antwan Twerkswag</a></li>
+						<li><a href="#vic">Victorious Johnson</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 
+		<!-- Page content -->
+		<!-- This is where pages get loaded.  Found in ./js/siteloader. -->
+		<div id="siteloader-pagecontainer" class="container"></div>
+
+		<footer class="footer">
+			<div class="container">
+				<p class="text-muted">A Vic and Twan Production</p>
+			</div>
+		</footer>
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="js/jquery/jquery.min.js"></script>
 		<script src="js/bootstrap/bootstrap.min.js"></script>
+		<script src="js/siteloader/siteloader.js"></script>
 	</body>
 </html>
