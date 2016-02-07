@@ -1,11 +1,12 @@
-function insertPage(url) {
+function downloadPage(url) {
 	$('#siteloader-pagecontainer').load(url, function () {
-		//find pages to include
-		var page_hashes = findHashLinks(url);
-		$.each(page_hashes, function( index, value ) {
-			preLoadPage(value);
-		});
+		preLoadPages(url);
 	});
+}
+
+function insertPage(url) {
+	$('#siteloader-pagecontainer').html(sessionStorage.getItem(url));
+	preLoadPages(url);
 }
 
 function findHashLinks(url) {
@@ -24,16 +25,25 @@ function getUrlFromHash(hash) {
 	return url;
 }
 
-function loadPage(url) {
-	insertPage(url);
+function preLoadPage(pageUrl) {
+	var pageName = getUrlFromHash('#'+pageUrl.split('#')[1]);
+	$.get(pageName, function (pageHTML) {
+		sessionStorage.setItem(pageName, pageHTML);
+	}, 'html');
 }
 
-function preLoadPage(pageUrl) {
-	// TODO
-	// var res = document.createElement("link");
-	// res.rel = "preload";
-	// res.href = pageUrl;
-	// document.head.appendChild(res);
+function preLoadPages(url) {
+	var page_hashes = findHashLinks(url);
+	$.each(page_hashes, function (index, value) {
+		preLoadPage(value.href);
+	});
+}
+
+function loadPage(url) {
+	if (sessionStorage.getItem(url) != null)
+		insertPage(url);
+	else
+		downloadPage(url);
 }
 
 // Loads the given page from the url's #
