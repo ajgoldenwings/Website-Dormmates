@@ -1,26 +1,26 @@
-function downloadPage(url) {
+function loadPageFromStorageAndPreload(url) {
 	$('#siteloader-pagecontainer').load(url, function () {
 		preLoadPages(url);
 	});
 }
 
-function insertPage(url) {
+function insertPageAndPreload(url) {
 	$('#siteloader-pagecontainer').html(sessionStorage.getItem(url));
 	preLoadPages(url);
 }
 
-function findHashLinks(url) {
-	return $("#siteloader-pagecontainer a[href^='#']").toArray();
+function findHashLinksWithinId(id) {
+	return $(id+" a[href^='#']").toArray();
 }
 
 function getUrlFromHash(hash) {
 	var url;
 	switch (hash) {
-		case '#twan': 	url = "pages/twan.html";		break;
-		case '#vic': 	url = "pages/vic.html";			break;
-		case '#a1': 	url = "pages/assignment1.html";	break;
-		case '#a2': 	url = "pages/assignment2.html";	break;
-		default: 		url = "pages/home.html";
+		case '#twan': 	url = 'pages/twan.html';		break;
+		case '#vic': 	url = 'pages/vic.html';			break;
+		case '#a1': 	url = 'pages/assignment1.html';	break;
+		case '#a2': 	url = 'pages/assignment2.html';	break;
+		default: 		url = 'pages/home.html';
 	}
 	return url;
 }
@@ -33,25 +33,38 @@ function preLoadPage(pageUrl) {
 }
 
 function preLoadPages(url) {
-	var page_hashes = findHashLinks(url);
+	var page_hashes = findHashLinksWithinId('#siteloader-pagecontainer');
 	$.each(page_hashes, function (index, value) {
 		preLoadPage(value.href);
 	});
 }
 
-function loadPage(url) {
+function loadPageFromHash() {
+	var url = getUrlFromHash(window.location.hash);
 	if (sessionStorage.getItem(url) != null)
-		insertPage(url);
+		insertPageAndPreload(url);
 	else
-		downloadPage(url);
+		loadPageFromStorageAndPreload(url);
 }
 
 // Loads the given page from the url's #
 $(window).on('hashchange', function (e) {
-	var url = getUrlFromHash(window.location.hash);
-	loadPage(url);
+	 loadPageFromHash();
 });
 
 // Run on page load
-var url = getUrlFromHash(window.location.hash);
-loadPage(url);
+sessionStorage.clear();
+loadPageFromHash();
+
+// Load Default pages
+$.get('pages/twan.html', function (pageHTML) {
+	sessionStorage.setItem('pages/twan.html', pageHTML);
+}, 'html');
+
+$.get('pages/vic.html', function (pageHTML) {
+	sessionStorage.setItem('pages/vic.html', pageHTML);
+}, 'html');
+
+$.get('pages/home.html', function (pageHTML) {
+	sessionStorage.setItem('pages/home.html', pageHTML);
+}, 'html');

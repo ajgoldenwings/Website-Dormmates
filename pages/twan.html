@@ -1,4 +1,75 @@
-<div class="jumbotron">
-	<h1>A room begins for twan</h1>
-	<p>Write code here at your own risk..who am I kidding.  I know what I'm doing.</p>
+<div class="container">
+	<ul class="nav nav-pills nav-justified">
+		<li class="active"><a data-toggle="pill" href="#home">Introduction</a></li>
+		<li><a data-toggle="pill" href="#menu1">Some Cool Code</a></li>
+		<li><a data-toggle="pill" href="#menu2">Some Cool Links</a></li>
+		<li><a data-toggle="pill" href="#menu3">About</a></li>
+	</ul>
+
+	<div class="tab-content">
+		<div id="home" class="tab-pane fade in active">
+			<div class="jumbotron">
+				<h1>A room begins for twan</h1>
+				<p>Write code here at your own risk..who am I kidding.  I know what I'm doing!</p>
+			</div>
+			<img src="../media/blackbackground.jpg" class="img-rounded" alt="blackbackground" width="100%">
+			<img src="../media/snowland.jpg" class="img-rounded" alt="snowland" width="100%">
+		</div>
+		<div id="menu1" class="tab-pane fade">
+			<div class="panel-group" id="accordion">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Intro</a></h4>
+					</div>
+					<div id="collapse1" class="panel-collapse collapse in">
+						<div class="panel-body">The pages below is stuff I want to show to everyone. But do not touch since it is mine and not yours bro.  This is my side of the dorm</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Swapping Variables</a></h4>
+					</div>
+					<div id="collapse2" class="panel-collapse collapse">
+						<div class="panel-body">
+							<p align="center">
+								<div class="col-xs-4"><input type="text" id="box1" size="10" class="form-control" value=""></div>
+								<div class="col-xs-4 text-center"><button type="button" value="" onclick="swap = getElementById('box2').value;getElementById('box2').value = getElementById('box1').value;getElementById('box1').value = swap;" class="btn btn-default center">click here to swap</button></div>
+								<div class="col-xs-4"><input type="text" id="box2" size="10" class="form-control" value=""></div>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse3">To Help Debugging Code</a></h4>
+					</div>
+					<div id="collapse3" class="panel-collapse collapse">
+						<div class="panel-body">
+							<div class="col-xs-3"><input type="text" id="boxValue" size="10" class="form-control" value="The Value"></div>
+							<div class="col-xs-3 text-center"><button type="button" value="" onclick="theValue=getElementById('boxValue').value;alert('Here is an alert.  You can send a variable through here. The variable set is: '+theValue)" class="btn btn-default center">Alert</button></div>
+							<div class="col-xs-3 text-center"><button type="button" value="" onclick="theValue=getElementById('boxValue').value;console.log('Here is a log.  You can send a variable through here. The variable set is: '+theValue)" class="btn btn-default center">Log</button></div>
+							<div class="col-xs-3 text-center"><button type="button" value="" onclick="theValue=getElementById('boxValue').value;debugger;console.log('There was a debugger command sent.  You can view the javascript and run commands step by step.')" class="btn btn-default center">Debugger</button></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="menu2" class="tab-pane fade">
+			<table class="table table-condensed">
+				<thead>
+					<tr><th>Site</th><th>Url</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>Anthony Pearson</td><td><a href="http://tinyurl.com/anthony-pearson" target="_blank">tinyurl.com/anthony-pearson</a></td></tr>
+					<tr><td>Facebook</td><td><a href="https://www.facebook.com/ajgoldenwings" target="_blank">facebook.com/ajgoldenwings</a></td></tr>
+					<tr><td>Elop Party</td><td><a href="http://elopparty.com" target="_blank">ElopParty.com</a></td></tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="menu3" class="tab-pane fade">
+			<h3>About</h3>
+			<p>I am pretty cool. Not too cool. Nuf said.</p>
+			<img src="../media/me.jpg" class="img-rounded" alt="Me" width="100%">
+		</div>
+	</div>
 </div>
