@@ -26,10 +26,8 @@ function getUrlFromHash(hash) {
 }
 
 function preLoadPage(pageUrl) {
-	var pageName = getUrlFromHash('#'+pageUrl.split('#')[1]);
-	$.get(pageName, function (pageHTML) {
-		sessionStorage.setItem(pageName, pageHTML);
-	}, 'html');
+	var pageName = getUrlFromHash('#' + pageUrl.split('#')[1]);
+	savePageToSessionStorage(pageName);
 }
 
 function preLoadPages(url) {
@@ -37,6 +35,12 @@ function preLoadPages(url) {
 	$.each(page_hashes, function (index, value) {
 		preLoadPage(value.href);
 	});
+}
+
+function savePageToSessionStorage(url) {
+	$.get(url, function (pageHTML) {
+		sessionStorage.setItem(url, pageHTML);
+	}, 'html');
 }
 
 function loadPageFromHash() {
@@ -57,14 +61,6 @@ sessionStorage.clear();
 loadPageFromHash();
 
 // Load Default pages
-$.get('pages/twan.html', function (pageHTML) {
-	sessionStorage.setItem('pages/twan.html', pageHTML);
-}, 'html');
-
-$.get('pages/vic.html', function (pageHTML) {
-	sessionStorage.setItem('pages/vic.html', pageHTML);
-}, 'html');
-
-$.get('pages/home.html', function (pageHTML) {
-	sessionStorage.setItem('pages/home.html', pageHTML);
-}, 'html');
+savePageToSessionStorage('pages/vic.html');
+savePageToSessionStorage('pages/twan.html');
+savePageToSessionStorage('pages/home.html');
