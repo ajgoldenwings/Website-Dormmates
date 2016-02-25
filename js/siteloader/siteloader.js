@@ -10,17 +10,18 @@ function insertPageAndPreload(url) {
 }
 
 function findHashLinksWithinId(id) {
-	return $(id+" a[href^='#']").toArray();
+	// Selects id and of the descendants are filtered if tag with # and without data-toggle
+	return $(id+" a[href^='#']:not([data-toggle])").toArray();
 }
 
 function getUrlFromHash(hash) {
 	var url;
 	switch (hash) {
-		case '#twan': 	url = 'pages/twan.html';		break;
-		case '#vic': 	url = 'pages/vic.html';			break;
+		case '': 		url = 'pages/home.html';	break;
+		case '#': 		url = 'pages/home.html';	break;
 		case '#a1': 	url = 'pages/assignment1.html';	break;
 		case '#a2': 	url = 'pages/assignment2.html';	break;
-		default: 		url = 'pages/home.html';
+		default: 		url = 'pages/'+hash.split('#')[1]+'.html';
 	}
 	return url;
 }
