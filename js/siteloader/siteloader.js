@@ -1,12 +1,12 @@
-function loadPageFromStorageAndPreload(url) {
-	$('#siteloader-pagecontainer').load(url, function () {
-		preLoadPages(url);
+function loadPageFromStorageAndPreloadToId(url, id) {
+	$(id).load(url, function () {
+		preLoadPages(id);
 	});
 }
 
-function insertPageAndPreload(url) {
-	$('#siteloader-pagecontainer').html(sessionStorage.getItem(url));
-	preLoadPages(url);
+function insertPageAndPreloadToId(url, id) {
+	$(id).html(sessionStorage.getItem(url));
+	preLoadPages(id);
 }
 
 function findHashLinksWithinId(id) {
@@ -32,7 +32,7 @@ function preLoadPage(pageUrl) {
 }
 
 function preLoadPages(url) {
-	var page_hashes = findHashLinksWithinId('#siteloader-pagecontainer');
+	var page_hashes = findHashLinksWithinId(url);
 	$.each(page_hashes, function (index, value) {
 		preLoadPage(value.href);
 	});
@@ -44,22 +44,22 @@ function savePageToSessionStorage(url) {
 	}, 'html');
 }
 
-function loadPageFromHash() {
+function loadPageFromHashToId(id) {
 	var url = getUrlFromHash(window.location.hash);
 	if (sessionStorage.getItem(url) != null)
-		insertPageAndPreload(url);
+		insertPageAndPreloadToId(url, id);
 	else
-		loadPageFromStorageAndPreload(url);
+		loadPageFromStorageAndPreloadToId(url, id);
 }
 
 // Loads the given page from the url's #
 $(window).on('hashchange', function (e) {
-	 loadPageFromHash();
+	 loadPageFromHashToId('#siteloader-pagecontainer');
 });
 
 // Run on page load
 sessionStorage.clear();
-loadPageFromHash();
+loadPageFromHashToId('#siteloader-pagecontainer');
 
 // Load Default pages
 savePageToSessionStorage('pages/vic.html');

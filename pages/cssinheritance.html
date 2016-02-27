@@ -1,0 +1,84 @@
+<h1>CSS Inheritance</h1>
+<blockquote>
+	<p>
+		"<b>Inheritance</b> is the process by which properties are passed from parent to child elements even though those
+		properties have not been explicitly defined by other means. Certain properties are inherited automatically, and
+		as the name implies, a child element will take on the characteristics of its parent with regards to these properties."
+	</p>
+	<p><small>http://reference.sitepoint.com/css/inheritance</small></p>
+</blockquote>
+
+<style>
+	.container-border {
+		outline: 1px solid lightgrey;
+		padding: 15px;
+		margin-bottom: 20px;
+	}
+	.code {
+		font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+		overflow: auto;
+		width: auto;
+		padding: 5px;
+		margin: 0;
+		background-color: #eee;
+		max-height: 600px;
+	}
+</style>
+
+<h3>No style</h3>
+<div class="container container-border">
+	<p>This is a example paragraph. There is no additional styling.  Meaning this is default paragraph text.</p>
+<xmp class="code"><p>
+	This is a example paragraph.
+	There is no additional styling.
+	Meaning this is default paragraph text.
+</p>
+</xmp>
+</div>
+
+<h3>Inline Style</h3>
+<div class="container container-border">
+	<p style="color:red;">Inline Style.</p>
+<xmp class="code"><p style="color:red;">Inline Style.</p>
+</xmp>
+</div>
+
+<h3>Inherited Styles</h3>
+<div class="container container-border">
+	<style>.red {color: red} .green {color: green}</style>
+	<p>Default Color</p>
+	<div class="red">
+		<p>Inherited Color</p>
+		<p class="green">Overrided Color</p>
+	</div>
+<xmp class="code"><style>
+	.red {color: red}
+	.green {color: green}
+</style>
+
+<p>Default Color</p>
+<div class="red">
+	<p>Inherited Color</p>
+	<p class="green">Overrided Color</p>
+</div>
+</xmp>
+</div>
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+
+<p>Email <span class="text-primary">Anthony.James.Pearson@gmail.com</span> for questions and to request additional tutorials.</p>
+
+<div class="fb-comments" data-href="http://websitedormmates.com/#cssinheritance" data-width="100%" data-numposts="5"></div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=875954402522088";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>

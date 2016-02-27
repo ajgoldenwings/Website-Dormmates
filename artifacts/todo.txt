@@ -1,0 +1,11 @@
+
+-------------------------------------------
+-This is a text file for things to be done-
+-------------------------------------------
+
+Anthony's Dorm
+-Make a page for how to do css inheritance
+-js classes
+
+
+Victor's Dorm
