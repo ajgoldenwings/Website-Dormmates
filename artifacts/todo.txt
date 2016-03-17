@@ -4,8 +4,12 @@
 -------------------------------------------
 
 Anthony's Dorm
--Make a page for how to do css inheritance
--js classes
+1-Element Positioning
+2-supersede class inheritance
+3-more parent CSS properties
+4-!important
+5-inline style declarations
+6-js classes
 
 
 Victor's Dorm

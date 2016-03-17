@@ -1,0 +1,90 @@
+<h1>CSS Positioning</h1>
+<!--<blockquote>
+	<p>
+		"<b>Inheritance</b> is the process by which properties are passed from parent to child elements even though those
+		properties have not been explicitly defined by other means. Certain properties are inherited automatically, and
+		as the name implies, a child element will take on the characteristics of its parent with regards to these properties."
+	</p>
+	<p><small>http://reference.sitepoint.com/css/inheritance</small></p>
+</blockquote>-->
+
+<style>
+	.example-area {
+		background-color: lavender;
+		height: 200px;
+		outline: 1px solid lightgrey;
+		margin: 1px;
+		padding: 5px;
+	}
+	.static {
+		position: static;
+	}
+</style>
+
+<div class="margin-tb-40">
+<h2>Warning: Under Construction</h2>
+<h3>No Positioning</h3>
+<div class="container container-border">
+	<div class="example-area">
+		<div>Default Positioning</div>
+	</div>
+<xmp class="code"><div class="example-area">
+	<div>Default Positioning</div>
+</div></xmp>
+</div>
+</div>
+
+<div class="margin-tb-40">
+<h3>Positioning</h3>
+<div class="container container-border">
+	<p>The position property specifies the type of positioning method used for an element.</p>
+	<ul>
+		<li>static - positioned normally as if it was a div element, top right bottom left properties do not apply</li>
+		<li>relative - positioned normally however top right bottom left properties do apply which act similarly like margin</li>
+		<li>fixed - positioned to viewport, the most parent, stays in the same place even when scroling</li>
+		<li>absolute - positioned to closest parent that has a position property</li>
+	</ul>
+	<p>The position property must be set first before using top, bottom, left, and right properties.</p>
+</div>
+</div>
+
+<div class="margin-tb-40">
+<h3>Relative Positioning</h3>
+<div class="container container-border">
+	<div class="example-area static">
+		<div style="position:relative; top:80px; right:0; width:100px; height:60px; border:3px solid #73AD21;">Relative Positioning</div>
+	</div>
+<xmp class="code"><div class="example-area">
+	<div>Default Positioning</div>
+</div></xmp>
+</div>
+</div>
+
+<p>Email <span class="text-primary">Anthony.James.Pearson@gmail.com</span> for questions and to request additional tutorials.</p>
+
+<script>
+$(document).ready(function(){
+	$('xmp[class="code"]').attr("title",".example-area {background-color:lavender; height:200px; outline:1px solid lightgrey; margin:1px; padding:5px;}");
+	$('xmp[class="code"]').tooltip();
+});
+</script>
+<style>
+	.example-area {
+		background-color: lavender;
+		height: 200px;
+		outline: 1px solid lightgrey;
+		margin: 1px;
+		padding: 5px;
+	}
+</style>
+
+<div class="fb-comments" data-href="http://websitedormmates.com/#csspositioning" data-width="100%" data-numposts="5"></div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=875954402522088";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>

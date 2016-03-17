@@ -1,0 +1,16 @@
+.code {
+	font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+	overflow: auto;
+	width: auto;
+	padding: 5px;
+	margin: 0;
+	background-color: #eee;
+	max-height: 600px;
+}
+.container-border {
+	outline: 1px solid lightgrey;
+	padding: 15px;
+}
+.margin-tb-40 {
+	margin: 40px 0 40px 0;
+}

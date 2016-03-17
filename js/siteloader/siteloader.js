@@ -54,7 +54,7 @@ function loadPageFromHashToId(id) {
 
 // Loads the given page from the url's #
 $(window).on('hashchange', function (e) {
-	 loadPageFromHashToId('#siteloader-pagecontainer');
+	loadPageFromHashToId('#siteloader-pagecontainer');
 });
 
 // Run on page load

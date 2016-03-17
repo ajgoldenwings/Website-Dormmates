@@ -8,23 +8,7 @@
 	<p><small>http://reference.sitepoint.com/css/inheritance</small></p>
 </blockquote>
 
-<style>
-	.container-border {
-		outline: 1px solid lightgrey;
-		padding: 15px;
-		margin-bottom: 20px;
-	}
-	.code {
-		font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-		overflow: auto;
-		width: auto;
-		padding: 5px;
-		margin: 0;
-		background-color: #eee;
-		max-height: 600px;
-	}
-</style>
-
+<div class="margin-tb-40">
 <h3>No style</h3>
 <div class="container container-border">
 	<p>This is a example paragraph. There is no additional styling.  Meaning this is default paragraph text.</p>
@@ -35,14 +19,18 @@
 </p>
 </xmp>
 </div>
+</div>
 
+<div class="margin-tb-40">
 <h3>Inline Style</h3>
 <div class="container container-border">
 	<p style="color:red;">Inline Style.</p>
 <xmp class="code"><p style="color:red;">Inline Style.</p>
 </xmp>
 </div>
+</div>
 
+<div class="margin-tb-40">
 <h3>Inherited Styles</h3>
 <div class="container container-border">
 	<style>.red {color: red} .green {color: green}</style>
@@ -63,11 +51,6 @@
 </div>
 </xmp>
 </div>
-<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
 </div>
 
 <p>Email <span class="text-primary">Anthony.James.Pearson@gmail.com</span> for questions and to request additional tutorials.</p>
@@ -76,9 +59,9 @@
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=875954402522088";
-  fjs.parentNode.insertBefore(js, fjs);
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=875954402522088";
+	fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
