@@ -7,6 +7,9 @@ function loadPageFromStorageAndPreloadToId(url, id) {
 function insertPageAndPreloadToId(url, id) {
 	$(id).html(sessionStorage.getItem(url));
 	preLoadPages(id);
+
+	// If loading from session storage, reload FB comments
+	FB.XFBML.parse();
 }
 
 function findHashLinksWithinId(id) {
