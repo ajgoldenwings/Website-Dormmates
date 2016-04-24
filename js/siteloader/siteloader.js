@@ -67,4 +67,5 @@ loadPageFromHashToId('#siteloader-pagecontainer');
 // Load Default pages
 savePageToSessionStorage('pages/vic.html');
 savePageToSessionStorage('pages/twan.html');
+savePageToSessionStorage('pages/rina.html');
 savePageToSessionStorage('pages/home.html');
