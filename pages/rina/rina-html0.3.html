@@ -1,17 +1,32 @@
 
 <style>
 	body {
-		background-color:lightgrey;
+		background-color:white;
 	}
 	h1 {
-		color:blue;
+		color:purple;
 	}
+	h2 {
+		color:white;
+		text-shadow: 2px 2px 4px black;
+	 }
 	p {
-		color:green;
+		color:black;
+	}
+	span {
+		background-color: blue;
+		color:white;
+		font-family: Times New Roman;
 	}
 
 	.blood {
 		color:red;
+	}
+	.gold {
+		color:yellow;
+		font-family: Courier New;
+		text-shadow: 2px 2px 4px black;
+		
 	}
 </style>
 
@@ -31,7 +46,29 @@
 <br>
 
 <h2>Please make header 2 white</h2>
-<span>please make span's background yellow</span>
+<pre>
+	I used CSS following:
+	
+	< style > 
+	h2 {
+	 color:white;    
+	}
+	< /style >
+	
+	to change the color within header 2.
+</pre>	
+
+<p>Next header 2 is colored by using HTML style:</p>	
+<h2 style="color:pink">This is header 2 pink.</h2>
+<p>Hmmm don't know which code is more effieicnt to use in this situation.</p>
+
+<span style="color:yellow;">please make span's background yellow</span>
+
+<p>< span > tag is used to to inline-elements* in a document.<p>
+<p><b>Inline elements</b>: may contain only data and other inline elements</p>
+<p>do not begin with new line.</p>
+	
+<p>This is<span>span</span>tag.</p>
 
 
 <p>make a gold class</p>
