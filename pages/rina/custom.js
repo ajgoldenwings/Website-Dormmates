@@ -76,5 +76,13 @@ function load_popovers() {
 		html: true, placement: "bottom"
 	});
 
+	$('.js-a').popover({title: "Materials",
+		content: "<p>Please go to w3schools <a href='http://www.w3schools.com/js/default.asp' target='_blank'>here</a> and <a href='http://www.w3schools.com/js/js_intro.asp' target='_blank'>here</a> to view the content." +
+			"<br><br>Just a basic Q and A that might have a little bit of coding.",
+		html: true, placement: "bottom"
+	});
+
+
+
 
 }

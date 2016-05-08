@@ -1,0 +1,82 @@
+<h2>Answer the questions below</h2>
+<hr>
+Why study JavaScript?<br>
+PUTANSWERHERE<br>
+<br>
+<h3>Now some html refreshing</h3>
+Consider html elements, classes, IDs, and other attributes.<br>
+
+<style>
+	.red {color:red}
+</style>
+<xmp class="code"><div id="myDiv" class="red" alt="My test tag">My div tag testing</div></xmp>
+<div id="myDiv" class="red" alt="My test tag">My div tag testing</div>
+
+<br>
+
+Make a div tag with the id of 'theGreatTag' that says 'This is great!'<br>
+PUTANSWERHERE
+
+<!--ANSWER SHOULD LOOK LIKE<div id="theGreatTag">This is great!</div>-->
+
+<br>
+<br>
+So we have a div tag above. <u>The key is the 'id'</u>. In JavaScript, if we want to access a tag, we find it in the page using the <u>'id'</u>.<br>
+So an action on this tag of the id we call:<br>
+<xmp class="code">document.getElementById("theGreatTag").SOMEACTION...</xmp>
+Notice we have the ID (theGreateTag) in there<br>
+<br>
+One question is how do we run the code? What is SOMEACTION?<br>
+SOMEACTION is where we put something in there what we want to do. For instance we will try innerHTML. Another Note, JavaScript is case sensitive.  So if you use capitalized letters, you must use capitalized letters, or a combination of uppercase and lowercase EXACTLY or it will not work.<br>
+<br>
+<h3>Lets learn how to run some JavaScript</h3>
+We will do some JavaScript, or run some, when we click a button. So a button looks like below. Below is just a button that calls nothing.<br>
+<button type="button">Click Me, But I will not do anything!</button>
+<br>
+Now with an action:<br>
+<button type="button" onclick="alert('Hello World!')">Click Me, I say Hi!</button>
+<br>
+Notice above it has the html attribute onclick. Obviously, this means once it has been clicked, run the code between the '""'.<br>
+Back to id 'theGreatTag' lets change what it says. with this we will search it on the page using document.getElementById("demo") then put a '.' dot, and call an action, innerHTML. This means we will replace the HTML with new HTML that we will declare.
+<br><br>
+Create a button, add an onclick action that will search the page for theGreatTag like this, document.getElementById("theGreatTag"), then a dot, then innerHTML, then = then "put new text here". See Materials for help.<br>
+PUTANSWERHERE
+
+<br>
+<br>
+With the same ID change the style to red when clicking the button. See Materials for help.
+PUTANSWERHERE
+
+<br>
+<br>
+<h3>Finally, test yourself!</h3>
+
+<i><b>Below look at the code, we can see the onclick function calls a funcion between a script html tag. We want the input to be OK if it is 1 to 100. Change code below.</b></i>
+<i><b>If you can check to see if it is not a number using this code: if(isNaN(x)) {alert('This is not a number')}</b></i>
+<br>
+<br>
+
+<p>Please input a number between 1 and 10:</p>
+<input id="numb">
+<button type="button" onclick="myFunction()">Submit</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var x, text;
+
+    // Get the value of the input field with id="numb"
+    x = document.getElementById("numb").value;
+
+	if(isNaN(x)) {alert('This is not a number')}
+
+    // If x is Not a Number or less than one or greater than 10
+    if (isNaN(x) || x < 1 || x > 10) {
+        text = "Input not valid";
+    } else {
+        text = "Input OK";
+    }
+    document.getElementById("demo").innerHTML = text;
+}
+</script>
